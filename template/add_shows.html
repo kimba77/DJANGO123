@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Shows</title>
+</head>
+<body>
+
+<style>
+    body {
+        background: #0F2027; /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+
+    .forma {
+        background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
+        margin-left: 400px;
+        margin-right: 400px;
+    }
+
+    .but {
+        background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+        margin-left: 70px;
+        width: 400px;
+        height: 50px;
+    }
+
+</style>
+
+
+<div class="container add_book">
+    <form method="POST" enctype="multipart/form-data" class="forma">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="ADD" class="but">
+    </form>
+
+</div>
+
+</body>
+</html>

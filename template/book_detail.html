@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/bootstrap.css/' %}">
+
+</head>
+
+
+<style>
+    body {
+        background-color: #52ACFF;
+        background-image: linear-gradient(180deg, #52ACFF 25%, #FFE32C 100%);
+
+
+    }
+
+    .detail__img {
+        height: 500px;
+        width: 500px;
+        margin-left: 300px;
+
+
+    }
+
+    .shows__container {
+        object-fit: fill;
+    }
+
+    .btn-primary {
+        height: 40px;
+    }
+
+    .butons {
+
+
+    }
+</style>
+<div class="container butons">
+    <a href="/bookshow/" type="button" class="btn btn-outline-success">Back</a>
+    <a href="/bookshow/{{object.id}}/update/" class="btn btn-outline-success show_button">Update</a>
+    <a href="/bookshow/{{object.id}}/delete/" class="btn btn-outline-success show_button">Delete</a>
+</div>
+
+<div class="container shows__container">
+    <img src="{{object.img.url}}" class="detail__img" alt="">
+    <h2>{{object.title}}</h2>
+    <p>{{object.description}}</p>
+    <p>{{object.author}}</p>
+    <p>{{object.genre}}</p>
+    <p>{{object.tom}}</p>
+    <p>{{object.created_date}}</p>
+    <p>{{object.updated_date}}</p>
+    <div class="card-body">
+        <h2>Comments:</h2>
+        <ul>
+            {% for comment in object.book_shows_comment.all %}
+            <li>
+                <p>Username: {{comment.user.username}}</p>
+                <p>Text: {{comment.text}}</p>
+
+            </li>
+            {% endfor %}
+        </ul>
+
+    </div>
+</div>
+
+</body>
+</html>

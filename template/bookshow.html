@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookshows</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/bootstrap.css/' %}">
+</head>
+<body>
+<style>
+    body {
+        background: #0f0c29; /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+
+    .shows__img {
+        height: 250px;
+        object-fit: fill;
+    }
+
+    .shows__container {
+        height: 250px;
+        margin-top: 40px;
+
+
+    }
+
+    .bloksssss {
+        background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+
+    }
+
+    .pacage {
+        object-fit: fill;
+        background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
+    }
+
+    .col-3 {
+        height: 400px;
+    }
+
+
+</style>
+<a href="/add_book/" class="btn btn-outline-success show_button">Create new book</a>
+
+<div class="container">
+    <a href="/bookshow/" type="button" class="btn btn-outline-success">All</a>
+    <a href="/bookshow/latest/" type="button" class="btn btn-outline-success">latest</a>
+    <a href="/bookshow/Fantazy/" type="button" class="btn btn-outline-success">Fantazy</a>
+    <a href="/bookshow/Detective/" type="button" class="btn btn-outline-success">Detective</a>
+    <a href="/bookshow/Humor/" type="button" class="btn btn-outline-success">Humor</a>
+    <a href="/bookshow/Roman/" type="button" class="btn btn-outline-success">Roman</a>
+    <a href="/bookshow/Adveture/" type="button" class="btn btn-outline-success">Adveture</a>
+    <a href="/bookshow/Science_fiction/" type="button" class="btn btn-outline-success">Science_fiction</a>
+</div>
+<div class="container shows__container">
+    <div class="row gy-5">
+        {%for show in object_list%}
+        <div class="col-3">
+            <div class="card">
+                <img class="card-img-top shows__img" src="{{show.img.url}}" alt="Card image cap">
+                <div class="card-body pacage">
+                    <h5 class="card-title bloksssss">{{ show.title}}</h5>
+                    <p class="card-text">{{show.ganre}}</p>
+                    <a href="/bookshow/{{show.id }}/" class="btn btn-primary">Go {{show.title}}</a>
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+</div>
+</body>
+</html>

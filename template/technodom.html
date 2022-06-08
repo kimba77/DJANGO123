@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Technkdom</title>
+</head>
+<style>
+      body{
+        background: #0f0c29;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+    .shows__img{
+        height: 250px;
+        margin-right: 100px;
+        margin-left: 450px;
+    }
+    .shows__container{
+        height: 250px;
+        margin-top: 40px;
+        background: #e0a800;
+    }
+
+    .bloksssss{
+        background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+
+    }
+    .pacage{
+        margin-left: 200px;
+        margin-right: 230px;
+        background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
+    }
+
+    .col-3 {
+        height: 460px;
+    }
+
+</style>
+<div class="container button__container">
+    <a href="/parser" type="button" class="btn btn-outline-success">Parser</a>
+</div>
+<div class="container posts__container">
+    <div class="row gy-5">
+        {% for i in object_list%}
+        <div class="col-3">
+            <div class="card aaa">
+                <img class="card-img-top shows__img" src="{{i.image}}" alt="Card image cap">
+                <div class="card-body pacage">
+                    <p class="card-title">{{ i.price }}</p>
+                    <p class="card-title">{{ i.title }}</p>
+                    <a class="card-title">{{ i.link }}</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>

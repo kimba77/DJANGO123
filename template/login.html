@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log In</title>
+</head>
+<style>
+    body{
+        background: #0c5460;
+    }
+    .login_form{
+
+        margin-top: fill;
+        margin-right: 694px;
+        margin-left: 480px;
+        background-color: #4158D0;
+        background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+
+    }
+    .card{}
+</style>
+<body>
+<div class="container login_form">
+     <div class="card">
+        <form method="POST">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button class="btn btn-primary" type="submit">Log in</button>
+
+        </form>
+     </div>
+</div>
+</body>
+</html>

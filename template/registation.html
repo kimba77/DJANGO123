@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<style>
+    body{
+       background: #8360c3;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #2ebf91, #8360c3);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #2ebf91, #8360c3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
+    }
+    .con_er{
+        margin-right: 350px;
+        margin-left:  400px;
+
+
+
+    }
+</style>
+<body>
+<div class="container con_er">
+     <div class="row gy-5">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-primary" type="submit">Register</button>
+        </form>
+     </div>
+</div>
+</body>
+</html>
